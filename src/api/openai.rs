@@ -49,7 +49,7 @@ where
     if let Some(img_b64) = image_base64 {
         let user_prompt = match text_query {
             Some(custom) => format!("Analyze the image and solve the problem:\n{}", custom),
-            None => "Thoroughly scan the entire image. If there are MULTIPLE questions or tasks, answer EVERY single one in order (1, 2, 3...) with the direct correct answer, options, and concise code. Do not skip any question.".to_string(),
+            None => "1. If there are QUESTIONS / TESTS: Answer EVERY single one in order (1, 2, 3...) with exact option letters and text, and concise code without skipping any.\n2. If there are NO direct questions (theses, slides, notes, theory): NEVER just rewrite the text. Provide a high-yield summary: 🎯 Core Takeaways, 💡 Concise Explanation of concepts, and ⚡ Likely Test Questions & Answers.\n3. Match the language of the source. No conversational fluff.".to_string(),
         };
 
         messages.push(json!({

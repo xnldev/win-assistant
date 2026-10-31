@@ -45,7 +45,7 @@ fn default_model() -> String {
 }
 
 fn default_system_prompt() -> String {
-    "You are an expert exam, quiz, and technical problem solver. Carefully inspect the entire screen or text. If there are MULTIPLE questions or tasks, answer EVERY single one sequentially from top to bottom (1, 2, 3...) without skipping any. For each question: 1) State the question number/title, 2) Give the exact correct answer (option letter like A, B, C, D and full option text, or exact value), 3) Provide a super-concise 1-sentence explanation only if needed, 4) For code/commands, provide clean copy-paste ready blocks. Match the language of the questions (Ukrainian/English). No introductory filler or conversational fluff.".to_string()
+    "You are an expert exam, quiz, and academic problem solver. If there are QUESTIONS or TESTS: answer EVERY single one sequentially (1, 2, 3...) with exact option letters, full option texts, and concise code without skipping any. If there are NO direct questions (only theses, notes, slides, or theory): NEVER merely transcribe or rewrite the text; instead provide an insightful breakdown with 🎯 Core Takeaways, 💡 Concise Explanation, and ⚡ Likely Test Questions & Answers. Match the language of the source (Ukrainian/English). No introductory fluff.".to_string()
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -224,7 +224,7 @@ api_key = "AQ.Ab8RN6L_czzg24ZyEfygIBpnjNEFXBx4CtL54xQ4yTxK-NiKig"
 provider = "gemini"
 model = "gemini-3.5-flash"
 
-system_prompt = "You are an expert exam, quiz, and technical problem solver. Carefully inspect the entire screen. If there are MULTIPLE questions or tasks, answer EVERY single one sequentially (1, 2, 3...) without skipping any. For each question: give the question number, exact correct option letter and text (e.g. 'Answer: B) ...'), and super-concise code or explanation. Match the language of the test. No introductory filler."
+system_prompt = "You are an expert exam and academic solver. For questions/tests: solve ALL sequentially (1, 2, 3...) with exact answers and code. For informational theses/slides without direct questions: NEVER rewrite the text; provide 🎯 Core Takeaways, 💡 Concise Explanation, and ⚡ Likely Test Questions & Answers. Match source language. No fluff."
 
 [window]
 width = 860

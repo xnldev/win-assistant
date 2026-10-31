@@ -45,7 +45,10 @@ where
     let full_prompt = match text_query {
         Some(custom) => format!("{}\n\n[Context / Question]:\n{}", system_prompt, custom),
         None => format!(
-            "{}\n\n[Task]: Thoroughly scan the entire screen. If there are MULTIPLE questions, exercises, or tasks, answer EVERY single one in order (1, 2, 3...) without skipping any. State each question number, exact correct option letter and text, and copy-paste ready code.",
+            "{}\n\n[Instructions]:\n\
+            1. If there are QUESTIONS / TESTS / TASKS: Answer EVERY single one sequentially (1, 2, 3...) without skipping. State question number, exact correct option letter and text, and copy-paste ready code.\n\
+            2. If there are NO direct questions (only theses, notes, slides, or theory): NEVER merely rewrite the text. Provide a high-yield breakdown: 🎯 Core Takeaways (what it means), 💡 Key Concept Explanation, and ⚡ Likely Test Questions & Answers.\n\
+            3. Match the language of the screen (Ukrainian/English). Avoid filler intros.",
             system_prompt
         ),
     };
