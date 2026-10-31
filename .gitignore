@@ -5,4 +5,5 @@ Cargo.lock
 *.exe
 *.log
 *.tmp
-config.toml
+*.zip
+config.my_keys.toml

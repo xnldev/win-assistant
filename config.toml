@@ -1,0 +1,34 @@
+# Win-Assistant Configuration
+
+api_key = "YOUR_GEMINI_API_KEY_HERE"
+backup_api_key = "" # optional backup key (auto-switches if primary hits 429 quota)
+provider = "gemini"
+model = "gemini-flash-latest"
+
+system_prompt = "You are an expert helper. Solve the question concisely and accurately. Provide direct code or answers ready to use."
+
+[window]
+width = 860
+height = 500
+top_offset = 35
+opacity_percent = 92
+font_size = 13.5
+font_family = "Consolas"
+follow_mouse = false
+
+[hotkeys]
+capture_screen = "Q"       # Alt + Q: Scan screen
+analyze_clipboard = "W"    # Alt + W: Analyze clipboard
+clear_history = "C"        # Alt + C: Clear chat history
+toggle_visibility = "S"    # Alt + S: Hide/show HUD
+toggle_follow = "F"        # Alt + F: Follow cursor
+cycle_presets = "M"        # Alt + M: Cycle window sizes
+width_decrease = "["       # Alt + [: Narrower (-60px)
+width_increase = "]"       # Alt + ]: Wider (+60px)
+height_decrease = "-"      # Alt + -: Shorter (-50px)
+height_increase = "="      # Alt + =: Taller (+50px)
+scroll_up = "Up"           # Alt + Up: Scroll up
+scroll_down = "Down"       # Alt + Down: Scroll down
+opacity_decrease = "Left"  # Alt + Left: Less opaque
+opacity_increase = "Right" # Alt + Right: More opaque
+panic_exit = "X"           # Alt + Shift + X: Exit

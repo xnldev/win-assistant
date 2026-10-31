@@ -1,64 +1,39 @@
 # Win-Assistant
 
-A clean, lightweight, zero-dependency Windows AI HUD overlay built with native Win32 & Direct2D. 
-
-Completely invisible to screen capture & screen sharing (OBS, Zoom, Discord, Google Meet, Teams). Never steals focus from your active apps or games.
+> **Invisible AI HUD for Windows.** Solves quizzes, tests, and code directly on screen without stealing focus. Completely invisible to screen capture & screen sharing (OBS, Discord, Zoom, Meet, Teams).
 
 ---
 
-## Features
+## ⚡ Quick Start (No Coding or Rust Needed)
 
-- **OBS / Screen-Share Invisibility**: Hardware-level window capture protection (`WDA_EXCLUDEFROMCAPTURE`).
-- **Zero Focus Stealing**: Click-through, non-activating window (`WS_EX_NOACTIVATE | WS_EX_TRANSPARENT`).
-- **Task Queue System**: Press `Alt + Q` repeatedly — all requests are queued in memory and executed smoothly without drops.
-- **Micro-Animations & Inertia Scrolling**: Smooth continuous scrolling (`Alt + ▲ / ▼`), fluid opacity fading (`Alt + ◄ / ►`), and cyberpunk status laser glow.
-- **Failover / Backup Key**: Seamless automatic fallback to a backup API key if quota limits are reached.
-- **Native Direct2D**: Zero Electron, zero webviews, zero heavy runtimes — instant startup with ~40MB RAM usage.
-
----
-
-## Global Hotkeys
-
-| Shortcut | Action | Description |
-| :--- | :--- | :--- |
-| **`Alt + Q`** | **Scan Screen** | Captures active screen in RAM and queries AI with task queue |
-| **`Alt + W`** | **Scan Clipboard** | Solves copied text / code from clipboard |
-| **`Alt + C`** | **Clear History** | Clears chat stream and resets view |
-| **`Alt + F`** | **Follow Cursor** | Glides smoothly following mouse position |
-| **`Alt + M`** | **Cycle Sizes** | Compact (680×380), Standard (860×500), Wide (1120×680) |
-| **`Alt + [` / `Alt + ]`** | **Adjust Width** | Shrink / expand width (-60px / +60px) |
-| **`Alt + -` / `Alt + =`** | **Adjust Height** | Shrink / expand height (-50px / +50px) |
-| **`Alt + S`** | **Hide / Show** | Toggle HUD visibility instantly without losing focus |
-| **`Alt + ▲` / `Alt + ▼`** | **Smooth Scroll** | Hold for fluid inertia scroll or tap for line scroll |
-| **`Alt + ◄` / `Alt + ►`** | **Opacity** | Smoothly adjust transparency (30% to 98%) |
-| **`Alt + Shift + X`** | **Exit** | Close the assistant cleanly |
-
----
-
-## Quick Setup (For Users)
-
-No need to install Rust or any build tools!
-
-1. Download `win-assistant.exe` and `config.example.toml`.
-2. Rename `config.example.toml` to `config.toml` (place it next to `win-assistant.exe`).
-3. Get a free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
-4. Put your key into `config.toml`:
+1. **[Download the latest `win-assistant.zip`](https://github.com/xnldev/win-assistant/releases/latest)** from Releases.
+2. Unpack the archive (`win-assistant.exe` and `config.toml`).
+3. Open `config.toml` and paste your free [Google Gemini API Key](https://aistudio.google.com/app/apikey):
    ```toml
-   [api]
    api_key = "YOUR_GEMINI_KEY"
-   backup_api_key = "" # optional backup key
-   model = "gemini-flash-latest"
    ```
-5. Run `win-assistant.exe`. Press **`Alt + Q`** anytime!
+4. Run `win-assistant.exe` and press **`Alt + Q`** on any test or problem!
 
 ---
 
-## Build from Source (For Developers)
+## ⌨️ Essential Hotkeys
 
-Requires Windows 10/11 and Rust 1.80+:
+| Hotkey | Action | What it does |
+| :--- | :--- | :--- |
+| **`Alt + Q`** | **Scan Screen** | Takes a screenshot to RAM and gets instant AI answer |
+| **`Alt + W`** | **Clipboard** | Solves copied text or code |
+| **`Alt + C`** | **Clear** | Clears chat stream and queue |
+| **`Alt + F`** | **Follow Mouse** | Floats smoothly next to cursor |
+| **`Alt + S`** | **Hide / Show** | Toggles overlay visibility |
+| **`Alt + ▲ / ▼`** | **Scroll** | Smooth scrolling through answers |
+| **`Alt + ◄ / ►`** | **Opacity** | Adjust transparency (30% – 98%) |
+| **`Alt + M`** | **Resize** | Cycles window size presets |
+| **`Alt + Shift + X`** | **Exit** | Closes the app |
 
-```powershell
-cargo build --release
-```
+---
 
-Produces a single, self-contained `win-assistant.exe` in `target/release/`.
+## 🔒 Stealth Guarantee
+
+* **100% Screen-Share Proof**: Uses native Windows `WDA_EXCLUDEFROMCAPTURE`. Discord, OBS, Zoom, or Teams see only your desktop wallpaper or apps behind it.
+* **No Focus Stealing**: Built with `WS_EX_NOACTIVATE | WS_EX_TRANSPARENT`. Active windows and games never lose keyboard/mouse focus.
+* **Ultra-lightweight**: Pure Win32 + Direct2D in Rust. ~40 MB RAM, instant startup, zero Electron/Node overhead.
