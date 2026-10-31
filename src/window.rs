@@ -416,6 +416,7 @@ impl AssistantWindow {
             // Show without stealing active focus
             let _ = ShowWindow(hwnd, SW_SHOWNA);
             let _ = UpdateWindow(hwnd);
+            let _ = SetWindowDisplayAffinity(hwnd, WINDOW_DISPLAY_AFFINITY(0x00000011));
 
             Ok(Self {
                 hwnd,
@@ -617,6 +618,7 @@ unsafe extern "system" fn window_proc(
                         unsafe {
                             if next {
                                 let _ = ShowWindow(hwnd, SW_SHOWNA);
+                                let _ = SetWindowDisplayAffinity(hwnd, WINDOW_DISPLAY_AFFINITY(0x00000011));
                             } else {
                                 let _ = ShowWindow(hwnd, SW_HIDE);
                             }
