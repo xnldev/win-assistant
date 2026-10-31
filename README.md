@@ -1,9 +1,5 @@
 # Win-Assistant
 
-> **Invisible AI HUD for Windows.** Solves tests, and code directly on screen without stealing focus. Completely invisible to screen capture and screen sharing (OBS, Discord, Zoom, Meet).
-
----
-
 ## Quick Start
 
 1. **[Download the latest `win-assistant.zip`](https://github.com/xnldev/win-assistant/releases/latest)** from Releases.
@@ -20,7 +16,7 @@
 
 | Hotkey | Action | What it does |
 | :--- | :--- | :--- |
-| **`Alt + Q`** | **Scan Screen** | Takes a screenshot to RAM and gets instant AI answer |
+| **`Alt + Q`** | **Scan Screen** | Takes a screenshot to RAM and gets AI answer |
 | **`Alt + W`** | **Clipboard** | Solves copied text or code |
 | **`Alt + C`** | **Clear** | Clears chat stream and queue |
 | **`Alt + F`** | **Follow Mouse** | Floats smoothly next to cursor |
