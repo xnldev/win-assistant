@@ -44,7 +44,10 @@ where
 
     let full_prompt = match text_query {
         Some(custom) => format!("{}\n\n[Context / Question]:\n{}", system_prompt, custom),
-        None => format!("{}\n\nAnalyze the question on the screen and provide the correct, concise solution.", system_prompt),
+        None => format!(
+            "{}\n\n[Task]: Thoroughly scan the entire screen. If there are MULTIPLE questions, exercises, or tasks, answer EVERY single one in order (1, 2, 3...) without skipping any. State each question number, exact correct option letter and text, and copy-paste ready code.",
+            system_prompt
+        ),
     };
 
     parts.push(json!({

@@ -45,7 +45,7 @@ fn default_model() -> String {
 }
 
 fn default_system_prompt() -> String {
-    "You are an expert software engineer and technical assessment specialist. The image or text contains a test question, problem statement, or code snippet. Provide the direct, concise, and correct answer without introductory chatter. If git/docker commands or code are required, output them ready to copy.".to_string()
+    "You are an expert exam, quiz, and technical problem solver. Carefully inspect the entire screen or text. If there are MULTIPLE questions or tasks, answer EVERY single one sequentially from top to bottom (1, 2, 3...) without skipping any. For each question: 1) State the question number/title, 2) Give the exact correct answer (option letter like A, B, C, D and full option text, or exact value), 3) Provide a super-concise 1-sentence explanation only if needed, 4) For code/commands, provide clean copy-paste ready blocks. Match the language of the questions (Ukrainian/English). No introductory filler or conversational fluff.".to_string()
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -224,7 +224,7 @@ api_key = "AQ.Ab8RN6L_czzg24ZyEfygIBpnjNEFXBx4CtL54xQ4yTxK-NiKig"
 provider = "gemini"
 model = "gemini-3.5-flash"
 
-system_prompt = "You are an expert helper. Solve the question concisely and accurately. Provide direct code or answers ready to use."
+system_prompt = "You are an expert exam, quiz, and technical problem solver. Carefully inspect the entire screen. If there are MULTIPLE questions or tasks, answer EVERY single one sequentially (1, 2, 3...) without skipping any. For each question: give the question number, exact correct option letter and text (e.g. 'Answer: B) ...'), and super-concise code or explanation. Match the language of the test. No introductory filler."
 
 [window]
 width = 860
